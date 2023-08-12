@@ -1,0 +1,201 @@
+pythonCrashCourse
+
+import cli
+
+cmd1 = [ 
+	"show ip int brief",
+	]
+for c in cmd1:
+	cli.execute(c)
+	
+	=====================
+	
+#!/usr/bin/env python
+import cli
+
+commands = [
+    "show version",
+]
+
+for c in commands:
+    cli.executep(c)
+	
+========================
+!programming playground;
+
+config t
+no event manager applet bantayloop
+event manager applet bantayloop
+ event syslog pattern "Interface Loopback.* down" period 1
+ action 2.0 cli command "enable"
+ action 2.1 cli command "config t"
+ action 2.2 cli command "interface lo1"
+ action 2.3 cli command "no shutdown"
+ action 2.4 cli command "interface lo8"
+ action 2.5 cli command "no shutdown"
+ action 2.6 cli command "interface lo9"
+ action 2.7 cli command "no shutdown"
+ action 3.0 syslog msg "Interface Loopback1 was Protected by EEM,BAWAL YAN"
+end
+
+============================
+
+config t
+event manager applet gawaloopback
+ event none
+ action 1.0 puts "ilang loopback ang gusto mo?"
+ action 1.1 puts nonewline "> "
+ action 1.2 gets num 
+ action 2.0 cli command "enable"
+ action 2.1 cli command "conf t"
+ action 3.0 set i "1"
+ action 3.1 while $i le $num
+ action 3.2  cli command "interface Loopback $i"
+ action 3.3  cli command "ip address $i.$i.$i.$i 255.255.255.255"
+ action 3.4  increment i 1
+ action 3.5 end
+ action 4.0 cli command "end"
+ end
+ 
+ ===========================\
+ 
+ event manager run gawaloopback
+ 
+=========================
+
+config t
+no event manager applet deleteall
+event manager applet deleteall
+ event none
+ action 1.0 puts "ilang loopback ang SIRA mo?"
+ action 1.1 puts nonewline "> "
+ action 1.2 gets num 
+ action 2.0 cli command "enable"
+ action 2.1 cli command "conf t"
+ action 3.0 set i "1"
+ action 3.1 while $i le $num
+ action 3.2  cli command "no interface Loopback $i"
+ action 3.4  increment i 1
+ action 3.5 end
+ action 4.0 cli command "end"
+ end
+
+===============================
+import cli
+
+CMD2 = '''hostname PYTHONMADE
+'''
+
+cli.configurep(CMD2)
+
+ex.5: Create 4 loopbacks:
+
+import cli
+
+CMD3 = '''hostname PYDEVOP_AKO
+int loop 3
+ip add 3.3.3.3 255.255.255.255
+int loop 4
+ip add 4.4.4.4 255.255.255.255
+int loop 7
+ip add 7.7.7.7 255.255.255.255
+int loop 8
+ip add 8.8.8.8 255.255.255.255
+end
+'''
+
+cli.configurep(CMD3)
+
+=================================
+FOR POSTMAN
+=============
+
+config t
+ip http secure-server
+ip http authentication local
+restconf
+netconf-yang
+end
+
+
+TASK 5: 
+ENCYRPTION MASTERY
+
+KILL FW
+CMD
+POWERSHELL:
+
+Set-NetfirewallProfile -name public, private,domain -enabled false
+
+ Get-NetFirewallProfile
+ 
+ 
+SITE TO SITE: SYMMETRIC
+1. TUNNEL: IPSEC
+2. ENCRYPTION: AES/ 3DES/ rsa
+3. HASHING: protect data: sha1/sha256, md5
+
+aes: ad enc standard: 192 / 256
+ 
+ FD E8 F7 A9 B8 6C 3B FF 07 C0 D3 9D 04 60 5E DA
+ 
+ VPN traffic:
+ 7D 9F 9C D4 6B 61 34 4A 3D 4A 74 B5 7A 69 D0 97
+ 
+ 
+ 
+ BANKING SITE: ASSYMMETRIC
+ 
+ 
+ ====================
+ on VPN JAPAN
+ 
+ step 1:
+ conf t
+ int gi2
+  no shut
+   ip add 192.168.102.10 255.255.255.0
+   
+  VPN PHILIPPINES:
+  
+  conf t 
+   int gi 2
+   no sh 
+   ip add 192.168.102.20 255.255.255.0
+ 
+ 
+ ***** 
+ GIVE IP TO JAPAN LINUX
+256MB RAM
+THEN VMNET3
+
+sudo su
+ifconfig eth0 10.10.10.10 netmask 255.255.255.0 up
+
+ GIVE DEFAULT GATEWAY TO LINUX
+ 
+ route add default gw 10.10.10.1
+ netstat -rn
+ 
+ 
+ *****
+  GIVE IP TO PHILIPPINES LINUX
+256MB RAM
+THEN VMNET3
+
+sudo su
+ifconfig eth0 20.20.20.20 netmask 255.255.255.0 up
+
+ GIVE DEFAULT GATEWAY TO LINUX
+ 
+ route add default gw 20.20.20.1
+ netstat -rn
+   
+   ==================================
+   
+   HOMEWORK
+   STEP 1: DOWNLOAD AND INSTALL CSR1000V AT HOME
+   STEP 2: POSTMAN, VSCODE
+			CREATE LOOPBACKS: EEM, POSTMAN, PYTHON
+	STEP 3: CONFIGURE SITE TO SITE IPSEC VPN AT HOME
+	

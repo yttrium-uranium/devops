@@ -1,0 +1,28 @@
+ 
+
+TASK 2: PRE-TASK
+conf t
+ no logging console
+ no ip domain-lookup
+ int gi2
+  ip address 192.168.102.5 255.255.255.0
+  no sh
+
+at SecureCRT
+admin
+password
+
+conf t
+ line vty 0 14
+ exec-timeout 0 0
+
+
+TASK 3: CISCO IS JUDAS
+
+https://sandboxdnac.cisco.com/
+devnetuser/Cisco123!
+
+=========
+JSON
+JavaScript object Notation
+=========

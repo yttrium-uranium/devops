@@ -1,0 +1,202 @@
+Task1: evolve or be extinct!
+Network Engineers need scripting skills:
+
+syslog server:
+kiwi:
+administrator
+Password,123!$$
+
+LinuxAnsible:
+ansible
+Password123!
+
+web:admin/Password123!
+
+@c1kJP:
+config t
+ logging on
+ logging trap 6
+ logging 192.168.233.1
+end
+
+eem1x: YOUR BOSS FIRES YOU, 
+no event manager applet hostname-erase
+event manager applet hostname-erase
+ event cli pattern "hostname"
+ action 1.0 cli command "enable"
+ action 2.0 cli command "delete startup-config"
+ action 2.1 cli command "y"
+ action 2.2 cli command "format bootflash:"
+ action 2.3 cli command "y"
+ action 2.4 cli command "reload"
+ action 2.3 cli command "no"
+ 
+ 
+
+notepad:
+!c1kJP:
+config t
+event manager applet bantayloop
+ event syslog pattern "Interface Loopback1.* down" period 1
+ action 2.0 cli command "enable"
+ action 2.1 cli command "config t"
+ action 2.2 cli command "interface lo1"
+ action 2.3 cli command "no shutdown"
+ action 3.0 syslog msg "Interface Loopback1 was Protected by EEM,BAWAL YAN"
+end
+
+eemscript2:
+config t
+event manager applet bawalsabotage
+ event cli pattern "reload" sync no skip yes occurs 1
+ action 1.0 syslog msg "$_cli_msg has been STOPPED, BAWAL reboot diba!(-:"
+end
+
+eemScript3:
+@c1kJP
+config t
+event manager applet gawaloopback
+ event none
+ action 1.0 puts "ilang loopback ang gusto mo?"
+ action 1.1 puts nonewline "> "
+ action 1.2 gets num 
+ action 2.0 cli command "enable"
+ action 2.1 cli command "conf t"
+ action 3.0 set i "1"
+ action 3.1 while $i le $num
+ action 3.2  cli command "interface Loopback $i"
+ action 3.3  cli command "ip address $i.$i.$i.$i 255.255.255.255"
+ action 3.4  increment i 1
+ action 3.5 end
+ action 4.0 cli command "end"
+ end
+
+eemScript3:
+@c1kJP
+config t
+event manager applet siraloopback
+ event none
+ action 1.0 puts "ilang loopback ang SIRA mo?"
+ action 1.1 puts nonewline "> "
+ action 1.2 gets num 
+ action 2.0 cli command "enable"
+ action 2.1 cli command "conf t"
+ action 3.0 set i "1"
+ action 3.1 while $i le $num
+ action 3.2  cli command "no interface Loopback $i"
+ action 3.4  increment i 1
+ action 3.5 end
+ action 4.0 cli command "end"
+ end
+
+EEMscript5:
+config t
+event manager applet lokoka
+ event cli pattern "erase startup-config" sync no skip yes
+ action 1.0 syslog msg "$_cli_msg is BAWAL,BAKERO what is that!huli ka!"
+end
+
+TASK2: WHO WILL BE MY FUTURE BOSS?
+ITMANGER> DEVOPS> PROGRAMER > NETWORKENG > janitor
+
+TunaySErver->1x VMachines -> Nx Docker x 100 = kubernetes/Mental->Tanzu
+
+classicNetworkEngineers -> 
+NetworkDevOps
+- cisco cli
+- linux: ubuntu,redhat -> ansible,chef,puppet
+- RESTapi
+- JSON: javascript Object notation
+- Python
+
+TASK3: LEARNING REST API AND RESTCONF:
+C1JPH:
+config t
+ip http secure-server
+ip http authentication local
+restconf
+netconf-yang
+end
+
+C1Jsg:
+config t
+ip http secure-server
+ip http authentication local
+restconf
+netconf-yang
+end
+
+Application Programming Interface API Testing with 
+CRUD = create,read,update,delete -> post,get,put,patch,delete
+
+TASK4: SS0: single sign on access:
+octa sso --> ActiveDirectory Sign: office365/microsoftTeams
+
+TASK5: SWITCHING SKILLS FOR ENCOR:
+
+        ancient:
+STP,rapidSTP,mustipleInstanceSTP = VSS   or   VDC
+
+AAA = authorization, accounting, authencation
+Radius
+TACACs
+
+TASK6: MAKE CISCO use Windows Radius:
+c1kJP:
+config t
+aaa new-model
+radius-server vsa send authentication
+radius server RAD
+  address ipv4 192.168.233.8
+  no non-standard
+  key C1sc0123!
+  end
+
+tunaynaSW:
+	conf 
+        enable secret pass
+        username admin password pass
+	aaa new-model
+	radius-server host 192.168.233.8 key C1sc0123!
+	ip radius source-interface Vlan1
+	aaa authentication login default group radius local
+	int vlan 1
+          ip add 192.168.233.7 255.255.255.0
+        end
+
+ENCORTASK: LEARN HOW TO CONFIGURE:
+Multiple install spanningtree:
+d1,d2,a1,a2:
+config t
+vtp domain encor
+vtp mode server
+vtp password encor
+exit
+
+d1:
+config t
+vlan 2-20
+exit
+
+MultiPle instance spanning-tree: mSTP
+Vlans will use separate CPU instance:
+all vlans = cpu0, cpu1, cpu2,ex..
+d1,d2,a1,a2:
+config t
+spanning-tree mode mst
+spanning-tree mst configuration
+ name encor
+ revision 2
+ instance 1 vlan 4,5,6,7,8,9
+ instance 2 vlan 10,11,12,13,14
+ exit
+
+TaskEncor:
+create 31-39 , put this in instance cpu 3
+create 41-49 , put this in instance cpu 4
+
+FINALTASKHOW TOPASS: BY DECEMBER;
+
+
+
+
